@@ -19,3 +19,13 @@ button{
   margin-left: 2rem;
   border-radius: 1rem;
 }
+.toggle{
+  background-color: rgb(187, 185, 185);
+  width: 30%;
+  font-size: large;
+}
+.toggle-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
