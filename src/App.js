@@ -12,6 +12,8 @@ function App() {
     {id:125, name: 'Go swimming', completed: true},
   ]);
 
+  const [show, setShow] = useState(true);
+
   function handleDelete(id) {
     setTasks(tasks.filter(task => task.id != id))
   }
@@ -24,7 +26,7 @@ function App() {
           <div>
           <h1>My to do List</h1>
             <ul>
-              {tasks.map(task =>(
+              {show && tasks.map(task =>(
                 <li className='items' key={task.id}>
                   <span>{task.id}- {task.name}</span>                
                   <button onClick={()=>handleDelete(task.id)}>Delete</button>                  
