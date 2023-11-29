@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="App">
       <>
-        <Header />
-        <Tasks />
-        <Footer />
+        <Header title="To do App" />
+        <Tasks title="My to do List" />
+        <Footer footer="@copyright. All rights reserved" />
       </>
 
     </div>

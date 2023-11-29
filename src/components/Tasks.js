@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-export default function Tasks() {
+export default function Tasks(props) {
         const [tasks, setTasks]=useState([
           {id:121, name: 'Wash utensils', completed: false},
           {id:122, name: 'Wash Clothes', completed: true},
@@ -21,7 +21,7 @@ export default function Tasks() {
     <div className='list-container'>
         
     <div>
-    <h1>My to do List</h1>
+    <h1>{props.title}</h1>
     <div className='toggle-cont'>
       <button className='toggle' onClick={()=>setShow(!show)}>Toggle</button>
     </div>
