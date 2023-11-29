@@ -13,7 +13,7 @@
 - Css
 
 
-## 🚀 [Live Demo Link](https://kiboma2021.github.io/furahia-insurance/){:target="_blank"}
+## 🚀 <a href="https://kiboma2021.github.io/furahia-insurance/" target="_blank">Live Demo Link</a>
 
 
 ## 👥 Authors <a name="authors"></a>
