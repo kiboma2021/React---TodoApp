@@ -31,9 +31,9 @@ function App() {
           
             <ul>
               {show && tasks.map(task =>(
-                <li className='items' key={task.id}>
+                <li className={task.completed? "completed-items":"pending-items"} key={task.id} >
                   <span>{task.id}- {task.name}</span>                
-                  <button onClick={()=>handleDelete(task.id)}>Delete</button>                  
+                  <button onClick={()=>handleDelete(task.id)} className={task.completed?"btn-completed":"btn-pending"}>Delete</button>                  
                 </li>
 
               ))}
