@@ -5,13 +5,28 @@
   border-color: grey;
 }
 
-.items{
+.completed-items{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  margin: 0.5rem;
+  border-bottom: 0.2rem solid greenyellow; 
+  border-left: 0.2rem solid greenyellow;
 }
-button{
+
+.pending-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-bottom: 0.2rem solid rgb(215, 54, 54); 
+  border-left: 0.2rem solid rgb(215, 54, 54);
+}
+
+
+.btn-pending {
   background-color: red;
   border: none;
   color: white;
@@ -19,10 +34,25 @@ button{
   margin-left: 2rem;
   border-radius: 1rem;
 }
+
+.btn-completed {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 1rem;
+  margin-left: 2rem;
+  border-radius: 1rem;
+}
+
 .toggle{
   background-color: rgb(187, 185, 185);
   width: 30%;
   font-size: large;
+  border: none;
+  color: white;
+  padding: 1rem;
+  margin-left: 2rem;
+  border-radius: 1rem;  
 }
 .toggle-cont {
   display: flex;
