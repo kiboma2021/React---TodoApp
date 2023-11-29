@@ -25,6 +25,10 @@ function App() {
         
           <div>
           <h1>My to do List</h1>
+          <div className='toggle-cont'>
+            <button className='toggle' onClick={()=>setShow(!show)}>Toggle</button>
+          </div>
+          
             <ul>
               {show && tasks.map(task =>(
                 <li className='items' key={task.id}>
