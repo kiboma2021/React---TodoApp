@@ -11,6 +11,10 @@ function App() {
     {id:124, name: 'Study python - 100 days of code', completed: false},
     {id:125, name: 'Go swimming', completed: true},
   ]);
+
+  function handleDelete(id) {
+    setTasks(tasks.filter(task => task.id != id))
+  }
   return (
     <div className="App">
       <>
@@ -23,7 +27,7 @@ function App() {
               {tasks.map(task =>(
                 <li className='items' key={task.id}>
                   <span>{task.id}- {task.name}</span>                
-                  <button>Delete</button>                  
+                  <button onClick={()=>handleDelete(task.id)}>Delete</button>                  
                 </li>
 
               ))}
