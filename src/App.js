@@ -21,7 +21,7 @@ function App() {
           <h1>My to do List</h1>
             <ul>
               {tasks.map(task =>(
-                <li className='items'>
+                <li className='items' key={task.id}>
                   <span>{task.id}- {task.name}</span>                
                   <button>Delete</button>                  
                 </li>
