@@ -8,3 +8,8 @@
 .logo{
     height: 10rem;
 }
+
+.title {
+    font-size: 3rem;
+    color: rgb(142, 127, 255);
+}
