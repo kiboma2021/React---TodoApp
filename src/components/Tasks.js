@@ -16,12 +16,16 @@ export default function Tasks(props) {
           setTasks(tasks.filter(task => task.id !== id))
         }
 
+        const styles={
+          color: "red",
+          fontSize:"3rem"
+        }
 
   return (
     <div className='list-container'>
         
     <div>
-    <h1>{props.title}</h1>
+    <h1 style={styles}>{props.title}</h1>
     <div className='toggle-cont'>
       <button className='toggle' onClick={()=>setShow(!show)}>Toggle</button>
     </div>
