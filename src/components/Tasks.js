@@ -31,7 +31,7 @@ export default function Tasks(props) {
     <div>
     <h1 style={styles}>{props.title}</h1>
     <div className='toggle-cont'>
-      <button className='toggle' onClick={()=>setShow(!show)}>Toggle</button>
+      <button className='toggle' onClick={()=>setShow(!show)}>{show? "Hide":"Show"}</button>
     </div>
     <ul>
         {show && tasks.map(task =>(
