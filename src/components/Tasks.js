@@ -18,8 +18,11 @@ export default function Tasks(props) {
         }
 
         const styles={
-          color: "red",
-          fontSize:"3rem"
+          color: show? "green":"red",
+          fontSize:"3rem",
+          padding:"2rem",
+          border: "2px solid",
+          borderColor: show? "green" : "red",
         }
 
   return (
