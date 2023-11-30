@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import TaskList from './TaskList';
 
 export default function Tasks(props) {
         const [tasks, setTasks]=useState([
@@ -29,16 +30,13 @@ export default function Tasks(props) {
     <div className='toggle-cont'>
       <button className='toggle' onClick={()=>setShow(!show)}>Toggle</button>
     </div>
-    
-      <ul>
+    <ul>
         {show && tasks.map(task =>(
-          <li className={task.completed? "completed-items":"pending-items"} key={task.id} >
-            <span>{task.id}- {task.name}</span>                
-            <button onClick={()=>handleDelete(task.id)} className={task.completed?"btn-completed":"btn-pending"}>Delete</button>                  
-          </li>
+          <TaskList task={task} handleDelete={handleDelete} />
 
         ))}
-      </ul>
+      </ul>  
+
     </div>
     
   </div>
