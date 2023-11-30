@@ -4,7 +4,7 @@
 ![Alt text](<Screenshot from 2023-11-29 16-11-35.png>)
 ### 📖 [React] <a name="about-project"></a>
 
-> The app demonstrates state and useState
+> The app demonstrates state, useState and Components,Props, Global Level Styling, Component Level Styling, Inline Level Styling and Module Level Styling
 
 
 ### Tech Stack <a name="tech-stack"></a>
