@@ -12,9 +12,19 @@ export default function Tasks(props) {
         ]);
       
         const [show, setShow] = useState(true);
+        const [name, setName] = useState("");
       
         function handleDelete(id) {
           setTasks(tasks.filter(task => task.id !== id))
+        }
+
+        function addTask(event){
+          setName(event.target.value)
+          console.log(event.target.value)
+        }
+
+        function handleReset(){
+          setName("");
         }
 
         const styles={
@@ -34,10 +44,13 @@ export default function Tasks(props) {
       <button className='toggle' onClick={()=>setShow(!show)}>{show? "Hide":"Show"}</button>
     </div>
     <form>
-      <input type="text" />
-      <span className='reset'>Reset</span>
+      <input on onChange={addTask} type="text" placeholder='Enter Task' value={name} />
+      <span onClick={()=>setName("")} className='reset'>Reset</span>
       <button>Add</button>
     </form>
+    <div className='task-output'>
+      <p>{name} </p>
+    </div>
     <ul>
         {show && tasks.map(task =>(
           <TaskList task={task} handleDelete={handleDelete} />

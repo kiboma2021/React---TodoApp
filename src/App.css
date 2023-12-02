@@ -1,4 +1,6 @@
-.list-container, form {
+.list-container, 
+form,
+.task-output {
   display: flex;
   justify-content: center;
   align-items: center;
