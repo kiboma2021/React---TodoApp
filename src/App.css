@@ -1,6 +1,7 @@
 .list-container, 
 form,
-.task-output {
+.task-output,
+select {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +64,7 @@ form,
   align-items: center;
 }
 
-input {
+input,select {
   height: 2rem;
   background-color: rgb(233, 231, 231);
   border: 2px solid rgb(209, 204, 204);

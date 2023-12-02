@@ -13,6 +13,7 @@ export default function Tasks(props) {
       
         const [show, setShow] = useState(true);
         const [name, setName] = useState("");
+        const [status, setStatus] = useState(false);
       
         function handleDelete(id) {
           setTasks(tasks.filter(task => task.id !== id))
@@ -20,11 +21,31 @@ export default function Tasks(props) {
 
         function addTask(event){
           setName(event.target.value)
-          console.log(event.target.value)
+        }
+
+        function handleSubmit(event){
+          event.preventDefault();
+
+          console.log(status,Boolean(status));
+
+          const gen_id=Math.floor(Math.random()*10000);
+
+          const task = 
+            {
+              id: gen_id,
+              name: name,
+              completed: Boolean(status)
+            }
+
+          console.log(task)
+          setTasks([...tasks,task])
+          handleReset()
+
         }
 
         function handleReset(){
           setName("");
+          setStatus(false);
         }
 
         const styles={
@@ -43,9 +64,13 @@ export default function Tasks(props) {
     <div className='toggle-cont'>
       <button className='toggle' onClick={()=>setShow(!show)}>{show? "Hide":"Show"}</button>
     </div>
-    <form>
+    <form onSubmit={handleSubmit}>
       <input on onChange={addTask} type="text" placeholder='Enter Task' value={name} />
-      <span onClick={()=>setName("")} className='reset'>Reset</span>
+      <select onChange={(event)=>setStatus(event.target.value)} value={status} >
+        <option value="false">Pending</option>
+        <option value="true">Completed</option>
+      </select>
+      <span onClick={handleReset} className='reset'>Reset</span>
       <button>Add</button>
     </form>
     <div className='task-output'>
