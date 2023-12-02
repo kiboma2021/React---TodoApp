@@ -1,8 +1,9 @@
-.list-container {
+.list-container, form {
   display: flex;
   justify-content: center;
   align-items: center;
   border-color: grey;
+  margin: 1rem;
 }
 
 .completed-items{
@@ -58,4 +59,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+input {
+  height: 2rem;
+  background-color: rgb(233, 231, 231);
+  border: 2px solid rgb(209, 204, 204);
+}
+
+.reset, button {
+  background-color: red;
+  margin: 1rem;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+button {
+  background-color: blue;
+  border: none;
+  padding: 0.7rem;  
 }

@@ -33,6 +33,11 @@ export default function Tasks(props) {
     <div className='toggle-cont'>
       <button className='toggle' onClick={()=>setShow(!show)}>{show? "Hide":"Show"}</button>
     </div>
+    <form>
+      <input type="text" />
+      <span className='reset'>Reset</span>
+      <button>Add</button>
+    </form>
     <ul>
         {show && tasks.map(task =>(
           <TaskList task={task} handleDelete={handleDelete} />
