@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import TaskList from './TaskList';
 
 export default function Tasks(props) {
@@ -13,7 +12,9 @@ export default function Tasks(props) {
       
         const [show, setShow] = useState(true);
         const [name, setName] = useState("");
-        const [status, setStatus] = useState(false);
+        //const [status, setStatus] = useState(false);
+
+        const statusRef=useRef(false);
       
         function handleDelete(id) {
           setTasks(tasks.filter(task => task.id !== id))
@@ -26,15 +27,13 @@ export default function Tasks(props) {
         function handleSubmit(event){
           event.preventDefault();
 
-          console.log(status,Boolean(status));
-
           const gen_id=Math.floor(Math.random()*10000);
 
           const task = 
             {
               id: gen_id,
               name: name,
-              completed: Boolean(status)
+              completed: statusRef.current.value === 'true'
             }
 
           console.log(task)
@@ -45,7 +44,7 @@ export default function Tasks(props) {
 
         function handleReset(){
           setName("");
-          setStatus(false);
+          statusRef.current.value=false;
         }
 
         const styles={
@@ -66,7 +65,7 @@ export default function Tasks(props) {
     </div>
     <form onSubmit={handleSubmit}>
       <input on onChange={addTask} type="text" placeholder='Enter Task' value={name} />
-      <select onChange={(event)=>setStatus(event.target.value)} value={status} >
+      <select ref={statusRef} >
         <option value="false">Pending</option>
         <option value="true">Completed</option>
       </select>
